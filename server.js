@@ -24,6 +24,7 @@ app.use((req, res, next) => {
 // });
 
 app.use(express.static(__dirname + '/public'));
+app.use('/omnifood', express.static(__dirname + '/OmniFood'));
 
 hbs.registerHelper('getCurrentYear', () => {
   return new Date().getFullYear()
@@ -51,6 +52,7 @@ app.get('/projects', (req, res) => {
     pageTitle: 'Projects List',
   });
 });
+
 
 app.get('/bad', (req, res) => {
   res.send({
